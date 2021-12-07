@@ -15,6 +15,7 @@
 	<description>Seasonal Anime Tracker</description>
 	<properties>
 		<java.version>11</java.version>
+		<jackson.version>2.12.4</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +43,17 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin.external.google</groupId>
+			<artifactId>android-json</artifactId>
+			<version>0.0.20131108.vaadin1</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 

@@ -1,13 +1,13 @@
 package com.karan.SeasonalAnimeTracker.models;
 
-public class AnimeData {
+public class Anime {
     private String title;
     private String image_url;
     private String synopsis;
     private int episodes;
     private double score;
 
-    public AnimeData(String title, String image_url, String synopsis, int episodes, double score) {
+    public Anime(String title, String image_url, String synopsis, int episodes, double score) {
         this.title = title;
         this.image_url = image_url;
         this.synopsis = synopsis;
@@ -15,7 +15,7 @@ public class AnimeData {
         this.score = score;
     }
 
-    public AnimeData() {
+    public Anime() {
     }
 
     public String getTitle() {
