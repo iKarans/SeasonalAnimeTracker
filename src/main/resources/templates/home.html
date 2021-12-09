@@ -9,23 +9,26 @@
 </head>
 
 <body>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Image</th>
+            <th scope="col">Synopsis</th>
+            <th scope="col">Episodes</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="seasonalAnime : ${SeasonalAnimeList}">
+            <td th:text="${seasonalAnime.title}"></td>
+            <td><img src="${seasonalAnime.image_url}" alt="Anime img" /></td>
+            <td th:text="${seasonalAnime.synopsis}"></td>
+            <td th:text="${seasonalAnime.episodes}"></td>
+            <td th:text="${seasonalAnime.score}"></td>
+        </tr>
 
-<p th:text="#{home.welcome}"></p>
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Image</th>
-        <th>Synopsis</th>
-        <th>Episodes</th>
-        <th>Score</th>
-    </tr>
-    <tr th:each="seasonalAnime : ${SeasonalAnimeList}">
-        <td th:text="${seasonalAnime.title}"></td>
-        <td><img src="${seasonalAnime.image_url}" alt="Anime img" /></td>
-        <td th:text="${seasonalAnime.synopsis}"></td>
-        <td th:text="${seasonalAnime.episodes}"></td>
-        <td th:text="${seasonalAnime.score}"></td>
-    </tr>
+    </tbody>
 </table>
 
 </body>
