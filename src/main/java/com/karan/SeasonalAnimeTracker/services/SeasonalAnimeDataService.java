@@ -5,6 +5,7 @@ import com.karan.SeasonalAnimeTracker.models.Anime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -14,12 +15,18 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 @Service
 public class SeasonalAnimeDataService {
-    String ANIME_DATA_URL = "https://api.jikan.moe/v3/season/2019/summer";
-    ArrayList<Anime> seasonalAnimeList = new ArrayList<>();
+    private final String seasons[] = {
+            "sinter", "sinter", "sinter", "spring", "spring", "spring",
+            "summer", "summer", "summer", "fall", "fall", "fall"
+    };
+    private String ANIME_DATA_URL = "https://api.jikan.moe/v3/season/" + Calendar.getInstance().get(Calendar.YEAR) + "/" + seasons[Calendar.getInstance().get(Calendar.MONTH)];
+    private ArrayList<Anime> seasonalAnimeList = new ArrayList<>();
     @PostConstruct
+    @Scheduled(cron = "* * * 3 * *")
     public void fetchAnimeData() throws IOException, InterruptedException, JSONException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
