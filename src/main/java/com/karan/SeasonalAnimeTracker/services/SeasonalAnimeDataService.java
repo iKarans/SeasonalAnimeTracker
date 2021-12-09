@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 @Service
 public class SeasonalAnimeDataService {
-    public String ANIME_DATA_URL = "https://api.jikan.moe/v3/season/2019/summer";
-
+    String ANIME_DATA_URL = "https://api.jikan.moe/v3/season/2019/summer";
+    ArrayList<Anime> seasonalAnimeList = new ArrayList<>();
     @PostConstruct
     public void fetchAnimeData() throws IOException, InterruptedException, JSONException {
         HttpClient client = HttpClient.newHttpClient();
@@ -32,10 +32,18 @@ public class SeasonalAnimeDataService {
         JSONArray animeArrayJson = jsonObject.getJSONArray("anime");
         Gson gson = new Gson();
         Anime[] animeList = gson.fromJson(String.valueOf(animeArrayJson), Anime[].class);
-        ArrayList<Anime> seasonalAnimeList = new ArrayList<>();
+        ArrayList<Anime> tempSeasonalAnimeList = new ArrayList<>();
         for(int i = 0; i < animeList.length; i++) {
-            seasonalAnimeList.add(animeList[i]);
+            tempSeasonalAnimeList.add(animeList[i]);
         }
+        this.seasonalAnimeList = tempSeasonalAnimeList;
+    }
 
+    public ArrayList<Anime> getSeasonalAnimeList() {
+        return seasonalAnimeList;
+    }
+
+    public void setSeasonalAnimeList(ArrayList<Anime> seasonalAnimeList) {
+        this.seasonalAnimeList = seasonalAnimeList;
     }
 }
