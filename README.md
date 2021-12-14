@@ -6,8 +6,8 @@
 
 A seasonal anime tracket table built using Java, Spring, Bootstrap.
 
-The table has for coloumn: Tile, Image, Synopsis and score. It is sorted in descending order by the score and the data is fetched from the [Jikan API](https://jikan.moe). The [Gson library](https://github.com/google/gson) to convert the response into the Anime Java Object. Thymelead is used to create the HTML and the styling for the table is taken from boostrap.
+The table has for coloumn: Tile, Image, Synopsis and Score. It is sorted in descending order by the score and the data is fetched from the [Jikan API](https://jikan.moe). The [Gson library](https://github.com/google/gson) to convert the response into the Anime Java Object. Thymeleaf is used to create the HTML and the styling for the table is taken from bootstrap.
 
 ## Improvements / To-Dos
 
-- [ ] The progress bar for Donkey 3:00 is cramped on mobile.
+- [ ] Try to fetch from official MAL API, need to figure out the auth key.
