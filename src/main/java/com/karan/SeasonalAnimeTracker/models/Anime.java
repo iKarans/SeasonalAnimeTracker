@@ -1,6 +1,6 @@
 package com.karan.SeasonalAnimeTracker.models;
 
-public class Anime {
+public class Anime implements Comparable<Anime> {
     private String title;
     private String image_url;
     private String synopsis;
@@ -67,5 +67,10 @@ public class Anime {
                 ", episodes=" + episodes +
                 ", score=" + score +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Anime o) {
+        return Double.compare(o.getScore(), this.getScore());
     }
 }

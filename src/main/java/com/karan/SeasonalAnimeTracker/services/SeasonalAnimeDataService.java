@@ -16,6 +16,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 
 @Service
 public class SeasonalAnimeDataService {
@@ -43,14 +44,11 @@ public class SeasonalAnimeDataService {
         for(int i = 0; i < animeList.length; i++) {
             tempSeasonalAnimeList.add(animeList[i]);
         }
+        Collections.sort(tempSeasonalAnimeList);
         this.seasonalAnimeList = tempSeasonalAnimeList;
     }
 
     public ArrayList<Anime> getSeasonalAnimeList() {
         return seasonalAnimeList;
-    }
-
-    public void setSeasonalAnimeList(ArrayList<Anime> seasonalAnimeList) {
-        this.seasonalAnimeList = seasonalAnimeList;
     }
 }
