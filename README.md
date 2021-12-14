@@ -6,7 +6,7 @@
 
 A seasonal anime tracket table built using Java, Spring, Bootstrap.
 
-The table lists the latest season's anime in descending order by score. The data is fetched from the [Jikan API](https://jikan.moe)
+The table has for coloumn: Tile, Image, Synopsis and score. It is sorted in descending order by the score and the data is fetched from the [Jikan API](https://jikan.moe). The [Gson library](https://github.com/google/gson) to convert the response into the Anime Java Object. Thymelead is used to create the HTML and the styling for the table is taken from boostrap.
 
 ## Improvements / To-Dos
 
