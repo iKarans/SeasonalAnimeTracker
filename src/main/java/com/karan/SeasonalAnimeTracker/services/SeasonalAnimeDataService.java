@@ -21,7 +21,7 @@ import java.util.Collections;
 @Service
 public class SeasonalAnimeDataService {
     private final String seasons[] = {
-            "sinter", "sinter", "sinter", "spring", "spring", "spring",
+            "winter", "winter", "winter", "spring", "spring", "spring",
             "summer", "summer", "summer", "fall", "fall", "fall"
     };
     private String ANIME_DATA_URL = "https://api.jikan.moe/v3/season/" + Calendar.getInstance().get(Calendar.YEAR) + "/" + seasons[Calendar.getInstance().get(Calendar.MONTH)];
